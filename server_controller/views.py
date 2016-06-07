@@ -46,4 +46,4 @@ def check_proc(request):
         else:
             return HttpResponse(status=400)
     else:
-        return HttpResponse(status = 405)
+        return HttpResponse(status=405)
