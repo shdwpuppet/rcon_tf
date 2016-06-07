@@ -1,8 +1,9 @@
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
-from .models Server
+from .models import Server
 from celery.result import AsyncResult
 import simplejson
+
 
 def dashboard(request):
     return HttpResponse('dashboard')
@@ -24,7 +25,7 @@ def send_command(request):
     return HttpResponse(status=405)
 
 def check_proc(request):
-    if request.method == 'POST'
+    if request.method == 'POST':
         if 'proc_id' in request.POST:
             async_result = AsyncResult(request.POST['proc_id'])
             try:
